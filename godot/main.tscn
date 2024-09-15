@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://br8ftvctldqfs"]
+
+[ext_resource type="PackedScene" uid="uid://bj6yuxkxiyjyf" path="res://ui/input/input.tscn" id="1_s4a5n"]
+
+[node name="Main" type="Node"]
+
+[node name="Root" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Elements" type="VBoxContainer" parent="Root"]
+layout_mode = 2
+alignment = 2
+
+[node name="Input" parent="Root/Elements" instance=ExtResource("1_s4a5n")]
+layout_mode = 2
