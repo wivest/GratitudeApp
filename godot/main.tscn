@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://br8ftvctldqfs"]
+[gd_scene load_steps=3 format=3 uid="uid://br8ftvctldqfs"]
 
+[ext_resource type="Script" path="res://ui/Messages.cs" id="1_26w06"]
 [ext_resource type="PackedScene" uid="uid://bj6yuxkxiyjyf" path="res://ui/input/input.tscn" id="1_s4a5n"]
 
 [node name="Main" type="Node"]
@@ -15,9 +16,11 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Elements" type="VBoxContainer" parent="Root"]
+[node name="Elements" type="VBoxContainer" parent="Root" node_paths=PackedStringArray("inputLine")]
 layout_mode = 2
 alignment = 2
+script = ExtResource("1_26w06")
+inputLine = NodePath("Input")
 
 [node name="Input" parent="Root/Elements" instance=ExtResource("1_s4a5n")]
 layout_mode = 2

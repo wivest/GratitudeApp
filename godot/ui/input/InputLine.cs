@@ -1,9 +1,12 @@
+using System;
 using Godot;
 
 namespace GratitudeApp
 {
-    public partial class Input : Control
+    public partial class InputLine : Control
     {
+        public event Action<string> MessageSaved;
+
         private LineEdit lineEdit;
         private Button saveButton;
 
@@ -22,7 +25,7 @@ namespace GratitudeApp
 
             if (message != "")
             {
-                GD.Print("Saved");
+                MessageSaved(message);
             }
         }
     }
