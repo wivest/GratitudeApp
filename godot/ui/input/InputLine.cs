@@ -19,6 +19,19 @@ namespace GratitudeApp
             saveButton = GetNode<Button>("Button");
 
             saveButton.Pressed += OnMessageSaved;
+            lineEdit.TextChanged += OnTextChanged;
+        }
+
+        private void OnTextChanged(string text)
+        {
+            string[] tokens = text.Split('@');
+            string tag = tokens[^1];
+
+            foreach (Person person in people)
+            {
+                if (person.Tag.StartsWith(tag))
+                    GD.Print(person.Name);
+            }
         }
 
         private void OnMessageSaved()
