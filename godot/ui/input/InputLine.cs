@@ -7,6 +7,9 @@ namespace GratitudeApp
     {
         public event Action<string> MessageSaved;
 
+        [Export]
+        private Person[] people;
+
         private LineEdit lineEdit;
         private Button saveButton;
 

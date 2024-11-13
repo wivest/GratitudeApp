@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bj6yuxkxiyjyf"]
+[gd_scene load_steps=4 format=3 uid="uid://bj6yuxkxiyjyf"]
 
 [ext_resource type="Script" path="res://ui/input/InputLine.cs" id="1_tmddn"]
+[ext_resource type="Script" path="res://model/Person.cs" id="2_nm5tp"]
+
+[sub_resource type="Resource" id="Resource_dx2kb"]
+script = ExtResource("2_nm5tp")
+Name = "Me"
+Tag = "me"
 
 [node name="Input" type="HBoxContainer"]
 script = ExtResource("1_tmddn")
+people = Array[Resource]([SubResource("Resource_dx2kb")])
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 2

@@ -1,9 +1,13 @@
-using System;
+using Godot;
 
-namespace GrattitudeApp.Model;
+namespace GratitudeApp;
 
-public class Person
+[GlobalClass]
+public partial class Person : Resource
 {
+    [Export]
     public string Name;
+
+    [Export]
     public string Tag;
 }
