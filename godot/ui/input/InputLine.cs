@@ -24,8 +24,10 @@ namespace GratitudeApp
 
         private void OnTextChanged(string text)
         {
-            string[] tokens = text.Split('@');
-            string tag = tokens[^1];
+            string lastWord = text.Split(' ')[^1];
+            if (!lastWord.StartsWith('@'))
+                return;
+            string tag = lastWord.Split('@')[^1];
 
             foreach (Person person in people)
             {
