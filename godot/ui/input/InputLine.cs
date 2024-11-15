@@ -1,14 +1,14 @@
 using System;
+using System.Collections.Generic;
 using Godot;
 
 namespace GratitudeApp
 {
     public partial class InputLine : Control
     {
-        public event Action<string> MessageSaved;
+        public static List<Person> People { get; set; } = new();
 
-        [Export]
-        private Person[] people;
+        public event Action<string> MessageSaved;
 
         private LineEdit lineEdit;
         private Button saveButton;
@@ -29,7 +29,7 @@ namespace GratitudeApp
                 return;
             string tag = lastWord.Split('@')[^1];
 
-            foreach (Person person in people)
+            foreach (Person person in People)
             {
                 if (person.Tag.StartsWith(tag))
                     GD.Print(person.Name);
