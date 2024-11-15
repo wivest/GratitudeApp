@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://br8ftvctldqfs"]
+[gd_scene load_steps=4 format=3 uid="uid://br8ftvctldqfs"]
 
 [ext_resource type="Script" path="res://ui/Messages.cs" id="1_26w06"]
 [ext_resource type="PackedScene" uid="uid://bj6yuxkxiyjyf" path="res://ui/input/input.tscn" id="1_s4a5n"]
+[ext_resource type="PackedScene" uid="uid://r8m8u1o5v638" path="res://ui/person/person_input.tscn" id="3_nqv1e"]
 
 [node name="Main" type="Node"]
 
@@ -26,4 +27,7 @@ inputLine = NodePath("Input")
 layout_mode = 2
 
 [node name="Input" parent="Root/Elements" instance=ExtResource("1_s4a5n")]
+layout_mode = 2
+
+[node name="Person" parent="Root/Elements" instance=ExtResource("3_nqv1e")]
 layout_mode = 2
