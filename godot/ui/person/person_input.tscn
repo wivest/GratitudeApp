@@ -8,10 +8,12 @@ script = ExtResource("1_gwx3g")
 [node name="Name" type="LineEdit" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+placeholder_text = "Name"
 
 [node name="Tag" type="LineEdit" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+placeholder_text = "Tag"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
