@@ -5,7 +5,11 @@
 [node name="Person" type="HBoxContainer"]
 script = ExtResource("1_gwx3g")
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="Name" type="LineEdit" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Tag" type="LineEdit" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 
