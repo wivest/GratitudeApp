@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Godot;
+using Godot.Collections;
 
 namespace GratitudeApp
 {
@@ -10,13 +11,13 @@ namespace GratitudeApp
 
         [Export]
         private InputLine inputLine;
-        private VBoxContainer messages;
+        private VBoxContainer messageNodes;
 
-        private Godot.Collections.Array<Label> messageNodes = new();
+        private List<Message> messages = new();
 
         public override void _Ready()
         {
-            messages = GetNode<VBoxContainer>("Messages");
+            messageNodes = GetNode<VBoxContainer>("Messages");
             LoadMessages();
             inputLine.MessageSaved += OnMessageSaved;
         }
@@ -27,25 +28,25 @@ namespace GratitudeApp
                 return;
 
             SaveData saveData = ResourceLoader.Load<SaveData>(SAVE_PATH);
-            messageNodes = saveData.Messages;
+            messages = new List<Message>(saveData.Messages);
 
-            foreach (Label message in messageNodes)
+            foreach (Message message in messages)
             {
-                messages.AddChild(message);
+                messageNodes.AddChild(new Label { Text = message.Text });
             }
         }
 
         private void SaveMessages()
         {
-            var saveData = new SaveData { Messages = messageNodes };
+            var saveData = new SaveData { Messages = new Array<Message>(messages) };
             ResourceSaver.Save(saveData, SAVE_PATH);
         }
 
         private void CreateRecord(string record)
         {
             var label = new Label { Text = record };
-            messages.AddChild(label);
-            messageNodes.Add(label);
+            messageNodes.AddChild(label);
+            messages.Add(new Message { Text = record });
             SaveMessages();
         }
 

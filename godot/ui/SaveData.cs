@@ -7,6 +7,6 @@ namespace GratitudeApp
     public partial class SaveData : Resource
     {
         [Export]
-        public Godot.Collections.Array<Label> Messages = new();
+        public Godot.Collections.Array<Message> Messages = new();
     }
 }
