@@ -10,7 +10,7 @@ namespace GratitudeApp
         public static List<Person> People { get; set; } = new();
 
         public event Action<string> MessageSaved;
-        public event Action<Person> PersonMatched;
+        public event Action<List<Person>> PeopleMatched;
 
         private LineEdit lineEdit;
         private Button saveButton;
@@ -31,11 +31,13 @@ namespace GratitudeApp
                 return;
             string tag = lastWord.Split('@')[^1];
 
+            var matchedPeople = new List<Person>();
             foreach (Person person in People)
             {
                 if (person.Tag.StartsWith(tag))
-                    PersonMatched(person);
+                    matchedPeople.Add(person);
             }
+            PeopleMatched(matchedPeople);
         }
 
         private void OnMessageSaved()

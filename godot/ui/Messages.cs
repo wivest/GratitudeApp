@@ -23,7 +23,7 @@ namespace GratitudeApp
             peopleHints = GetNode<VBoxContainer>("PeopleHints");
             LoadMessages();
             inputLine.MessageSaved += OnMessageSaved;
-            inputLine.PersonMatched += OnPersonMatched;
+            inputLine.PeopleMatched += OnPeopleMatched;
         }
 
         private void LoadMessages()
@@ -59,9 +59,15 @@ namespace GratitudeApp
             CreateRecord(message);
         }
 
-        private void OnPersonMatched(Person person)
+        private void OnPeopleMatched(List<Person> matched)
         {
-            GD.Print(person.Name);
+            foreach (Node child in peopleHints.GetChildren())
+                child.QueueFree();
+            foreach (Person person in matched)
+            {
+                var personHint = new PersonHint { Text = $"{person.Name} (@{person.Tag})" };
+                peopleHints.AddChild(personHint);
+            }
         }
     }
 }
