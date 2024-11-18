@@ -1,8 +1,7 @@
 using Godot;
 
-namespace GratitudeApp;
+namespace GratitudeApp.Model;
 
-[GlobalClass]
 public partial class Person : Resource
 {
     [Export]

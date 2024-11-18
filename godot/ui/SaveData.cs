@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using Godot;
+using GratitudeApp.Model;
 
 namespace GratitudeApp
 {

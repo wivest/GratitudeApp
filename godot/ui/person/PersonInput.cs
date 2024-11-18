@@ -1,4 +1,5 @@
 using Godot;
+using GratitudeApp.Model;
 
 namespace GratitudeApp;
 

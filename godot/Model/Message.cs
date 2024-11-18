@@ -1,6 +1,6 @@
 using Godot;
 
-namespace GratitudeApp;
+namespace GratitudeApp.Model;
 
 public partial class Message : Resource
 {
