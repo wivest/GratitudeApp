@@ -13,14 +13,17 @@ namespace GratitudeApp
         [Export]
         private InputLine inputLine;
         private VBoxContainer messageNodes;
+        private VBoxContainer peopleHints;
 
         private List<Message> messages = new();
 
         public override void _Ready()
         {
             messageNodes = GetNode<VBoxContainer>("Messages");
+            peopleHints = GetNode<VBoxContainer>("PeopleHints");
             LoadMessages();
             inputLine.MessageSaved += OnMessageSaved;
+            inputLine.PersonMatched += OnPersonMatched;
         }
 
         private void LoadMessages()
@@ -54,6 +57,11 @@ namespace GratitudeApp
         private void OnMessageSaved(string message)
         {
             CreateRecord(message);
+        }
+
+        private void OnPersonMatched(Person person)
+        {
+            GD.Print(person.Name);
         }
     }
 }

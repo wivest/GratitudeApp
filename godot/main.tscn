@@ -26,6 +26,9 @@ inputLine = NodePath("Input")
 [node name="Messages" type="VBoxContainer" parent="Root/Elements"]
 layout_mode = 2
 
+[node name="PeopleHints" type="VBoxContainer" parent="Root/Elements"]
+layout_mode = 2
+
 [node name="Input" parent="Root/Elements" instance=ExtResource("1_s4a5n")]
 layout_mode = 2
 

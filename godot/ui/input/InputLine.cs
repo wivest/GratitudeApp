@@ -10,6 +10,7 @@ namespace GratitudeApp
         public static List<Person> People { get; set; } = new();
 
         public event Action<string> MessageSaved;
+        public event Action<Person> PersonMatched;
 
         private LineEdit lineEdit;
         private Button saveButton;
@@ -33,7 +34,7 @@ namespace GratitudeApp
             foreach (Person person in People)
             {
                 if (person.Tag.StartsWith(tag))
-                    GD.Print(person.Name);
+                    PersonMatched(person);
             }
         }
 
