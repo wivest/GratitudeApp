@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using GratitudeApp.Model;
 
 namespace GratitudeApp
@@ -7,6 +8,9 @@ namespace GratitudeApp
     public partial class SaveData : Resource
     {
         [Export]
-        public Godot.Collections.Array<Message> Messages = new();
+        public Array<Message> Messages = new();
+
+        [Export]
+        public Array<Person> People = new();
     }
 }

@@ -33,6 +33,7 @@ namespace GratitudeApp
 
             SaveData saveData = ResourceLoader.Load<SaveData>(SAVE_PATH);
             messages = new List<Message>(saveData.Messages);
+            InputLine.People = new List<Person>(saveData.People);
 
             foreach (Message message in messages)
             {
@@ -42,7 +43,11 @@ namespace GratitudeApp
 
         private void SaveMessages()
         {
-            var saveData = new SaveData { Messages = new Array<Message>(messages) };
+            var saveData = new SaveData
+            {
+                Messages = new Array<Message>(messages),
+                People = new Array<Person>(InputLine.People)
+            };
             ResourceSaver.Save(saveData, SAVE_PATH);
         }
 
