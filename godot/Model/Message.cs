@@ -12,7 +12,7 @@ public partial class Message : Resource
     public Array<Person> Tagged { get; set; }
 
     [Export]
-    public float Time { get; set; }
+    public double Time { get; set; }
 
     [Export]
     public bool Edited { get; set; }
