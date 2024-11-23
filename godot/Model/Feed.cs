@@ -16,5 +16,8 @@ public partial class Feed : ScrollContainer
         inputLine.MessageSaved += OnNoteSaved;
     }
 
-    private void OnNoteSaved(string note) { }
+    private void OnNoteSaved(string note)
+    {
+        GD.Print(note);
+    }
 }
