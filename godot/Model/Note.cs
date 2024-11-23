@@ -11,7 +11,7 @@ public partial class Note : VBoxContainer
     public Note(NoteData note)
     {
         text = new Label { Text = note.Text };
-        date = new Label { Text = note.Time.ToString() };
+        date = new Label { Text = note.TimeString };
         edited = new Label { Text = note.Edited.ToString() };
 
         AddChild(text);

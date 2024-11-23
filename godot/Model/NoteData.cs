@@ -12,8 +12,13 @@ public partial class NoteData : Resource
     public Array<Person> Tagged { get; set; }
 
     [Export]
-    public double Time { get; set; }
+    public double UnixTime { get; set; }
 
     [Export]
     public bool Edited { get; set; }
+
+    public string TimeString
+    {
+        get => Time.GetTimeStringFromUnixTime((long)UnixTime);
+    }
 }
