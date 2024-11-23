@@ -21,4 +21,8 @@ public partial class NoteData : Resource
     {
         get => Time.GetTimeStringFromUnixTime((long)UnixTime);
     }
+    public string EditedString
+    {
+        get => Edited ? "edited" : "";
+    }
 }

@@ -12,7 +12,7 @@ public partial class Note : VBoxContainer
     {
         text = new Label { Text = note.Text };
         date = new Label { Text = note.TimeString };
-        edited = new Label { Text = note.Edited.ToString() };
+        edited = new Label { Text = note.EditedString };
 
         AddChild(text);
         AddChild(date);
