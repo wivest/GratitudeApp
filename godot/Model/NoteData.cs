@@ -3,7 +3,7 @@ using Godot.Collections;
 
 namespace GratitudeApp.Model;
 
-public partial class Message : Resource
+public partial class NoteData : Resource
 {
     [Export]
     public string Text { get; set; }

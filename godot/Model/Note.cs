@@ -2,13 +2,13 @@ using Godot;
 
 namespace GratitudeApp.Model;
 
-public partial class NoteWidget : VBoxContainer
+public partial class Note : VBoxContainer
 {
     private Label text;
     private Label date;
     private Label edited;
 
-    public NoteWidget(Message note)
+    public Note(NoteData note)
     {
         text = new Label { Text = note.Text };
         date = new Label { Text = note.Time.ToString() };

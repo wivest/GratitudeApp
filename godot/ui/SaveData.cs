@@ -8,7 +8,7 @@ namespace GratitudeApp
     public partial class SaveData : Resource
     {
         [Export]
-        public Array<Message> Messages = new();
+        public Array<NoteData> Messages = new();
 
         [Export]
         public Array<Person> People = new();

@@ -5,5 +5,5 @@ namespace GratitudeApp.Model.Handlers;
 
 partial class MessageHandler : Node
 {
-    private List<Message> messages = new();
+    private List<NoteData> messages = new();
 }

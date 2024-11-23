@@ -18,7 +18,7 @@ public partial class Feed : ScrollContainer
 
     private void OnNoteSaved(string text)
     {
-        var note = new Message { Text = text, Time = Time.GetUnixTimeFromSystem() };
-        container.AddChild(new NoteWidget(note));
+        var note = new NoteData { Text = text, Time = Time.GetUnixTimeFromSystem() };
+        container.AddChild(new Note(note));
     }
 }

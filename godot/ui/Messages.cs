@@ -15,7 +15,7 @@ namespace GratitudeApp
         private VBoxContainer messageNodes;
         private VBoxContainer peopleHints;
 
-        private List<Message> messages = new();
+        private List<NoteData> messages = new();
 
         public override void _Ready()
         {
@@ -32,10 +32,10 @@ namespace GratitudeApp
                 return;
 
             SaveData saveData = ResourceLoader.Load<SaveData>(SAVE_PATH);
-            messages = new List<Message>(saveData.Messages);
+            messages = new List<NoteData>(saveData.Messages);
             InputLine.People = new List<Person>(saveData.People);
 
-            foreach (Message message in messages)
+            foreach (NoteData message in messages)
             {
                 messageNodes.AddChild(new Label { Text = message.Text });
             }
@@ -45,7 +45,7 @@ namespace GratitudeApp
         {
             var saveData = new SaveData
             {
-                Messages = new Array<Message>(messages),
+                Messages = new Array<NoteData>(messages),
                 People = new Array<Person>(InputLine.People)
             };
             ResourceSaver.Save(saveData, SAVE_PATH);
@@ -55,7 +55,7 @@ namespace GratitudeApp
         {
             var label = new Label { Text = record };
             messageNodes.AddChild(label);
-            messages.Add(new Message { Text = record });
+            messages.Add(new NoteData { Text = record });
             SaveMessages();
         }
 
