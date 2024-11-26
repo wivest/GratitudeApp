@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Godot;
 
 namespace GratitudeApp.Model;
@@ -14,6 +15,16 @@ public partial class Feed : ScrollContainer
         container = GetNode<VBoxContainer>("Container");
 
         inputLine.MessageSaved += OnNoteSaved;
+    }
+
+    public void SaveNotes()
+    {
+        var notes = new List<NoteData>();
+        foreach (Node child in container.GetChildren())
+        {
+            Note note = (Note)child;
+            notes.Add(note.NoteResource);
+        }
     }
 
     private void OnNoteSaved(string text)
