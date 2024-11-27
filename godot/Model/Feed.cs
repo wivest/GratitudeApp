@@ -30,7 +30,7 @@ public partial class Feed : ScrollContainer
             notes.Add(note.NoteResource);
         }
 
-        saver.Save(new NoteSave());
+        saver.Save(new NoteSave { Notes = new Array<NoteData>(notes) });
     }
 
     private void OnNoteSaved(string text)
