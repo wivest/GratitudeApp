@@ -1,9 +1,12 @@
+using Godot;
+using Godot.Collections;
+
 namespace GratitudeApp.Model.Save;
 
-interface ISaveFile
+interface ISaveFile<[MustBeVariant] T>
 {
     public string SavePath { get; }
 
-    public void Load();
-    public void Save();
+    public Array<T> Load();
+    public void Save(Array<T> items);
 }

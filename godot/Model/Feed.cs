@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using Godot;
+using Godot.Collections;
+using GratitudeApp.Model.Save;
 
 namespace GratitudeApp.Model;
 
@@ -9,6 +11,8 @@ public partial class Feed : ScrollContainer
     private InputLine inputLine;
 
     private VBoxContainer container;
+
+    private SaveList<NoteData> saver = new("user://people.tres");
 
     public override void _Ready()
     {
@@ -25,6 +29,7 @@ public partial class Feed : ScrollContainer
             Note note = (Note)child;
             notes.Add(note.NoteResource);
         }
+        saver.Save(new Array<NoteData>(notes));
     }
 
     private void OnNoteSaved(string text)
