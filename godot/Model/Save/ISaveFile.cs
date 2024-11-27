@@ -7,6 +7,9 @@ interface ISaveFile<[MustBeVariant] T>
 {
     public string SavePath { get; }
 
-    public Array<T> Load();
-    public void Save(Array<T> items);
+    [Export]
+    public Array<T> Items { get; set; }
+
+    public void Load();
+    public void Save();
 }

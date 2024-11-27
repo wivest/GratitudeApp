@@ -12,7 +12,7 @@ public partial class Feed : ScrollContainer
 
     private VBoxContainer container;
 
-    private SaveList<NoteData> saver = new("user://people.tres");
+    private SaveArray<NoteData> saver = new("user://people.tres");
 
     public override void _Ready()
     {
@@ -29,7 +29,9 @@ public partial class Feed : ScrollContainer
             Note note = (Note)child;
             notes.Add(note.NoteResource);
         }
-        saver.Save(new Array<NoteData>(notes));
+
+        saver.Items = new Array<NoteData>(notes);
+        saver.Save();
     }
 
     private void OnNoteSaved(string text)

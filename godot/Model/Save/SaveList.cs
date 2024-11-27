@@ -3,21 +3,23 @@ using Godot.Collections;
 
 namespace GratitudeApp.Model.Save;
 
-partial class SaveList<[MustBeVariant] T> : Resource, ISaveFile<T>
+partial class SaveArray<[MustBeVariant] T> : Resource, ISaveFile<T>
 {
     public string SavePath { get; }
 
-    public SaveList(string savePath)
+    public Array<T> Items { get; set; }
+
+    public SaveArray(string savePath)
     {
         SavePath = savePath;
     }
 
-    public Array<T> Load()
+    public void Load()
     {
         throw new System.NotImplementedException();
     }
 
-    public void Save(Array<T> items)
+    public void Save()
     {
         throw new System.NotImplementedException();
     }
