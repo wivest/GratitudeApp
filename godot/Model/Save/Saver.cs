@@ -1,6 +1,9 @@
+using Godot;
+
 namespace GratitudeApp.Model.Save;
 
 public class Saver<T>
+    where T : Resource
 {
     private readonly string savePath;
 
@@ -11,11 +14,11 @@ public class Saver<T>
 
     public T Load()
     {
-        throw new System.NotImplementedException();
+        return ResourceLoader.Load<T>(savePath);
     }
 
     public void Save(T resource)
     {
-        throw new System.NotImplementedException();
+        ResourceSaver.Save(resource, savePath);
     }
 }
