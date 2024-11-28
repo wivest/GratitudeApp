@@ -3,7 +3,7 @@ using Godot;
 namespace GratitudeApp.Model.Save;
 
 public class Saver<T>
-    where T : Resource
+    where T : Resource, new()
 {
     private readonly string savePath;
 
@@ -14,6 +14,8 @@ public class Saver<T>
 
     public T Load()
     {
+        if (!ResourceLoader.Exists(savePath))
+            return new T();
         return ResourceLoader.Load<T>(savePath);
     }
 
