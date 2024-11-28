@@ -17,11 +17,19 @@ public partial class Feed : ScrollContainer
     public override void _Ready()
     {
         container = GetNode<VBoxContainer>("Container");
+        LoadNotes();
 
         inputLine.MessageSaved += OnNoteSaved;
     }
 
-    public void SaveNotes()
+    private void LoadNotes()
+    {
+        NoteSave notes = saver.Load();
+        foreach (NoteData noteData in notes.Notes)
+            container.AddChild(new Note(noteData));
+    }
+
+    private void SaveNotes()
     {
         var notes = new List<NoteData>();
         foreach (Node child in container.GetChildren())
@@ -37,5 +45,6 @@ public partial class Feed : ScrollContainer
     {
         var note = new NoteData { Text = text, UnixTime = Time.GetUnixTimeFromSystem() };
         container.AddChild(new Note(note));
+        SaveNotes();
     }
 }
