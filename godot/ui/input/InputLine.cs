@@ -46,9 +46,7 @@ namespace GratitudeApp
             lineEdit.Text = "";
 
             if (message != "")
-            {
-                MessageSaved(message);
-            }
+                MessageSaved?.Invoke(message);
         }
     }
 }
