@@ -23,6 +23,6 @@ public partial class NoteData : Resource
     }
     public string EditedString
     {
-        get => Edited ? "edited" : "";
+        get => Edited ? "edited" : "not edited";
     }
 }
