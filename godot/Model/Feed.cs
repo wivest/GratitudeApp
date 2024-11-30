@@ -48,7 +48,7 @@ public partial class Feed : ScrollContainer
     private void ClearNotes()
     {
         foreach (Node child in container.GetChildren())
-            child.QueueFree();
+            child.Free();
         SaveNotes();
     }
 
