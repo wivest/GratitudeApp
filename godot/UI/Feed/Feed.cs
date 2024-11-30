@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using Godot;
 using Godot.Collections;
+using GratitudeApp.Model;
 using GratitudeApp.Model.Save;
 
-namespace GratitudeApp.Model;
+namespace GratitudeApp.UI.Feed;
 
 public partial class Feed : ScrollContainer
 {

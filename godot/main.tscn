@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://br8ftvctldqfs"]
 
-[ext_resource type="Script" path="res://ui/Messages.cs" id="1_26w06"]
-[ext_resource type="PackedScene" uid="uid://bj6yuxkxiyjyf" path="res://ui/input/input.tscn" id="1_s4a5n"]
-[ext_resource type="PackedScene" uid="uid://r8m8u1o5v638" path="res://ui/person/person_input.tscn" id="3_nqv1e"]
-[ext_resource type="PackedScene" uid="uid://bawtto8dd00um" path="res://Model/feed.tscn" id="4_bqlbh"]
+[ext_resource type="Script" path="res://UI/Messages.cs" id="1_26w06"]
+[ext_resource type="PackedScene" uid="uid://bj6yuxkxiyjyf" path="res://UI/input/input.tscn" id="1_s4a5n"]
+[ext_resource type="PackedScene" uid="uid://r8m8u1o5v638" path="res://UI/person/person_input.tscn" id="3_nqv1e"]
+[ext_resource type="PackedScene" uid="uid://bawtto8dd00um" path="res://UI/Feed/feed.tscn" id="4_bqlbh"]
 
 [node name="Main" type="Node"]
 
@@ -19,11 +19,12 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Elements" type="VBoxContainer" parent="Root" node_paths=PackedStringArray("inputLine")]
+[node name="Elements" type="VBoxContainer" parent="Root"]
 layout_mode = 2
 alignment = 2
 script = ExtResource("1_26w06")
-inputLine = NodePath("Input")
+inputLine = Object(HBoxContainer,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"clip_contents":false,"custom_minimum_size":Vector2(0, 0),"layout_direction":0,"layout_mode":2,"size_flags_horizontal":1,"size_flags_vertical":1,"size_flags_stretch_ratio":1.0,"auto_translate":true,"localize_numeral_system":true,"tooltip_text":"","focus_neighbor_left":NodePath(""),"focus_neighbor_top":NodePath(""),"focus_neighbor_right":NodePath(""),"focus_neighbor_bottom":NodePath(""),"focus_next":NodePath(""),"focus_previous":NodePath(""),"focus_mode":0,"mouse_filter":1,"mouse_force_pass_scroll_events":true,"mouse_default_cursor_shape":0,"shortcut_context":null,"theme":null,"theme_type_variation":&"","alignment":0,"script":Resource("res://UII/input/InputLine.cs"))
+
 
 [node name="Messages" type="VBoxContainer" parent="Root/Elements"]
 layout_mode = 2
