@@ -10,6 +10,9 @@ public partial class Feed : ScrollContainer
     [Export]
     private InputLine inputLine;
 
+    [Export]
+    private Button clearButton;
+
     private VBoxContainer container;
 
     private readonly Saver<NoteSave> saver = new("user://notes.tres");
@@ -20,6 +23,7 @@ public partial class Feed : ScrollContainer
         LoadNotes();
 
         inputLine.MessageSaved += OnNoteSaved;
+        clearButton.Pressed += ClearNotes;
     }
 
     private void LoadNotes()

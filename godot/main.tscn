@@ -44,9 +44,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Feed" parent="VBoxContainer" node_paths=PackedStringArray("inputLine") instance=ExtResource("4_bqlbh")]
+[node name="Feed" parent="VBoxContainer" node_paths=PackedStringArray("inputLine", "clearButton") instance=ExtResource("4_bqlbh")]
 layout_mode = 2
 inputLine = NodePath("../Input")
+clearButton = NodePath("../ClearNotes")
 
 [node name="Input" parent="VBoxContainer" instance=ExtResource("1_s4a5n")]
 layout_mode = 2
+
+[node name="ClearNotes" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Clear notes"
