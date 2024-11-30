@@ -41,6 +41,13 @@ public partial class Feed : ScrollContainer
         saver.Save(new NoteSave { Notes = new Array<NoteData>(notes) });
     }
 
+    private void ClearNotes()
+    {
+        foreach (Node child in container.GetChildren())
+            child.QueueFree();
+        SaveNotes();
+    }
+
     private void OnNoteSaved(string text)
     {
         var note = new NoteData { Text = text, UnixTime = (long)Time.GetUnixTimeFromSystem() };
