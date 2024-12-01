@@ -6,6 +6,8 @@ public partial class Note : VBoxContainer
 {
     public readonly NoteData NoteResource;
 
+    private HBoxContainer container = new();
+
     private Label text;
     private Label date;
     private Label edited;
@@ -18,8 +20,9 @@ public partial class Note : VBoxContainer
         date = new Label { Text = note.TimeString };
         edited = new Label { Text = note.EditedString };
 
+        container.AddChild(edited);
+        container.AddChild(date);
         AddChild(text);
-        AddChild(date);
-        AddChild(edited);
+        AddChild(container);
     }
 }
