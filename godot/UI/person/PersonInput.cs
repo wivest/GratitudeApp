@@ -1,5 +1,6 @@
 using Godot;
 using GratitudeApp.Model;
+using GratitudeApp.UI.Notes;
 
 namespace GratitudeApp;
 
@@ -22,7 +23,7 @@ public partial class PersonInput : HBoxContainer
     {
         string name = nameLineEdit.Text;
         string tag = tagLineEdit.Text;
-        InputLine.People.Add(new Person { Name = name, Tag = tag });
+        NotesInputLine.People.Add(new Person { Name = name, Tag = tag });
         nameLineEdit.Text = "";
         tagLineEdit.Text = "";
     }

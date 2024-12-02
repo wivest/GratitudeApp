@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bawtto8dd00um"]
 
-[ext_resource type="Script" path="res://UI/Feed/Feed.cs" id="1_2dtup"]
+[ext_resource type="Script" path="res://UI/Notes/Feed/Feed.cs" id="1_2dtup"]
 
 [node name="Feed" type="ScrollContainer"]
 anchors_preset = 15

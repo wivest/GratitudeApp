@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Godot;
 using Godot.Collections;
 using GratitudeApp.Model;
+using GratitudeApp.UI.Notes;
 
 namespace GratitudeApp
 {
@@ -11,7 +12,7 @@ namespace GratitudeApp
         private const string SAVE_PATH = "user://save.tres";
 
         [Export]
-        private InputLine inputLine;
+        private NotesInputLine inputLine;
         private VBoxContainer messageNodes;
         private VBoxContainer peopleHints;
 
@@ -33,7 +34,7 @@ namespace GratitudeApp
 
             SaveData saveData = ResourceLoader.Load<SaveData>(SAVE_PATH);
             messages = new List<NoteData>(saveData.Messages);
-            InputLine.People = new List<Person>(saveData.People);
+            NotesInputLine.People = new List<Person>(saveData.People);
 
             foreach (NoteData message in messages)
             {
@@ -46,7 +47,7 @@ namespace GratitudeApp
             var saveData = new SaveData
             {
                 Messages = new Array<NoteData>(messages),
-                People = new Array<Person>(InputLine.People)
+                People = new Array<Person>(NotesInputLine.People)
             };
             ResourceSaver.Save(saveData, SAVE_PATH);
         }

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bj6yuxkxiyjyf"]
 
-[ext_resource type="Script" path="res://UI/input/InputLine.cs" id="1_tmddn"]
+[ext_resource type="Script" path="res://UI/Notes/InputLine/InputLine.cs" id="1_tmddn"]
 
 [node name="Input" type="HBoxContainer"]
 script = ExtResource("1_tmddn")

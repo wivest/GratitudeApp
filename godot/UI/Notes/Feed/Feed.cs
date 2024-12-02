@@ -4,12 +4,12 @@ using Godot.Collections;
 using GratitudeApp.Model;
 using GratitudeApp.Model.Save;
 
-namespace GratitudeApp.UI.Feed;
+namespace GratitudeApp.UI.Notes;
 
 public partial class Feed : ScrollContainer
 {
     [Export]
-    private InputLine inputLine;
+    private NotesInputLine inputLine;
 
     [Export]
     private Button clearButton;
