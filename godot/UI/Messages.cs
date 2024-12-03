@@ -71,7 +71,7 @@ namespace GratitudeApp
                 child.QueueFree();
             foreach (Person person in matched)
             {
-                var personHint = new PersonHint { Text = $"{person.Name} (@{person.Tag})" };
+                var personHint = new PersonHint(person) { Text = $"{person.Name} (@{person.Tag})" };
                 peopleHints.AddChild(personHint);
             }
         }
