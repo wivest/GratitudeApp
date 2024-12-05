@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://crnlywuc834gp"]
+
+[node name="Feed" type="ScrollContainer"]
+
+[node name="Container" type="VBoxContainer" parent="."]
+layout_mode = 2
