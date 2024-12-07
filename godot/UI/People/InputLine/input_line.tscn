@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://r8m8u1o5v638"]
 
-[ext_resource type="Script" path="res://UI/People/InputLine/PersonInput.cs" id="1_gwx3g"]
+[ext_resource type="Script" path="res://UI/People/InputLine/InputLine.cs" id="1_3jcs8"]
 
 [node name="Person" type="HBoxContainer"]
-script = ExtResource("1_gwx3g")
+script = ExtResource("1_3jcs8")
 
 [node name="Name" type="LineEdit" parent="."]
 layout_mode = 2
@@ -15,6 +15,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Tag"
 
-[node name="Button" type="Button" parent="."]
+[node name="Save" type="Button" parent="."]
 layout_mode = 2
 text = "Save"

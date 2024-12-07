@@ -1,10 +1,10 @@
+using System.Collections.Generic;
 using Godot;
 using GratitudeApp.Model;
-using GratitudeApp.UI.Notes;
 
-namespace GratitudeApp;
+namespace GratitudeApp.UI.People;
 
-public partial class PersonInput : HBoxContainer
+public partial class InputLine : HBoxContainer
 {
     private LineEdit nameLineEdit;
     private LineEdit tagLineEdit;
@@ -14,7 +14,7 @@ public partial class PersonInput : HBoxContainer
     {
         nameLineEdit = GetNode<LineEdit>("Name");
         tagLineEdit = GetNode<LineEdit>("Tag");
-        saveButton = GetNode<Button>("Button");
+        saveButton = GetNode<Button>("Save");
 
         saveButton.Pressed += OnPersonSaved;
     }
@@ -23,7 +23,7 @@ public partial class PersonInput : HBoxContainer
     {
         string name = nameLineEdit.Text;
         string tag = tagLineEdit.Text;
-        NotesInputLine.People.Add(new Person { Name = name, Tag = tag });
+        Notes.InputLine.People.Add(new Person { Name = name, Tag = tag });
         nameLineEdit.Text = "";
         tagLineEdit.Text = "";
     }

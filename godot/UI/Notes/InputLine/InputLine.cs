@@ -5,7 +5,7 @@ using GratitudeApp.Model;
 
 namespace GratitudeApp.UI.Notes;
 
-public partial class NotesInputLine : Control
+public partial class InputLine : Control
 {
     public static List<Person> People { get; set; } = new();
 

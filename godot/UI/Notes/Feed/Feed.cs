@@ -9,7 +9,7 @@ namespace GratitudeApp.UI.Notes;
 public partial class Feed : ScrollContainer
 {
     [Export]
-    private NotesInputLine inputLine;
+    private InputLine inputLine;
 
     [Export]
     private Button clearButton;

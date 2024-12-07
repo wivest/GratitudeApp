@@ -12,7 +12,7 @@ namespace GratitudeApp
         private const string SAVE_PATH = "user://save.tres";
 
         [Export]
-        private NotesInputLine inputLine;
+        private InputLine inputLine;
         private VBoxContainer messageNodes;
         private VBoxContainer peopleHints;
 
@@ -34,7 +34,7 @@ namespace GratitudeApp
 
             SaveData saveData = ResourceLoader.Load<SaveData>(SAVE_PATH);
             messages = new List<NoteData>(saveData.Messages);
-            NotesInputLine.People = new List<Person>(saveData.People);
+            InputLine.People = new List<Person>(saveData.People);
 
             foreach (NoteData message in messages)
             {
@@ -47,7 +47,7 @@ namespace GratitudeApp
             var saveData = new SaveData
             {
                 Messages = new Array<NoteData>(messages),
-                People = new Array<Person>(NotesInputLine.People)
+                People = new Array<Person>(InputLine.People)
             };
             ResourceSaver.Save(saveData, SAVE_PATH);
         }
