@@ -7,8 +7,6 @@ namespace GratitudeApp.UI.Notes;
 
 public partial class InputLine : Control
 {
-    public static List<Person> People { get; set; } = new();
-
     public event Action<string> MessageSaved;
     public event Action<List<Person>> PeopleMatched;
 
@@ -32,7 +30,7 @@ public partial class InputLine : Control
         string tag = lastWord.Split('@')[^1];
 
         var matchedPeople = new List<Person>();
-        foreach (Person person in People)
+        foreach (Person person in People.InputLine.People)
         {
             if (person.Tag.StartsWith(tag))
                 matchedPeople.Add(person);
