@@ -1,7 +1,7 @@
 using Godot;
 using Godot.Collections;
 
-namespace GratitudeApp.UI;
+namespace GratitudeApp.UI.Switcher;
 
 public partial class Switcher : HBoxContainer
 {

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://br8ftvctldqfs"]
 
 [ext_resource type="PackedScene" uid="uid://bklg1r6tbiolb" path="res://UI/Notes/notes.tscn" id="1_2r173"]
-[ext_resource type="Script" path="res://UI/Switcher.cs" id="2_spe5e"]
+[ext_resource type="Script" path="res://UI/Switcher/Switcher.cs" id="2_spe5e"]
 
 [node name="Main" type="Node"]
 
