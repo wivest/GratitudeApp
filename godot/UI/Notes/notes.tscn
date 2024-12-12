@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bklg1r6tbiolb"]
+
+[ext_resource type="PackedScene" uid="uid://bawtto8dd00um" path="res://UI/Notes/Feed/feed.tscn" id="1_a3dkh"]
+[ext_resource type="PackedScene" uid="uid://bj6yuxkxiyjyf" path="res://UI/Notes/InputLine/input_line.tscn" id="2_sbxl5"]
+
+[node name="Notes" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Feed" parent="." instance=ExtResource("1_a3dkh")]
+layout_mode = 2
+
+[node name="Input" parent="." instance=ExtResource("2_sbxl5")]
+layout_mode = 2
+
+[node name="ClearNotes" type="Button" parent="."]
+layout_mode = 2
+text = "Clear notes"
