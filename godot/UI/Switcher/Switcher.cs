@@ -6,5 +6,5 @@ namespace GratitudeApp.UI.Switcher;
 public partial class Switcher : HBoxContainer
 {
     [Export]
-    private Array<string> States;
+    private Array<Node> States;
 }
