@@ -8,12 +8,12 @@ public partial class Switcher : VBoxContainer
     [Export]
     private Array<Node> States;
 
-    private Node stateNode;
+    private Control stateNode;
     private HBoxContainer buttons;
 
     public override void _Ready()
     {
-        stateNode = GetNode<Node>("State");
+        stateNode = GetNode<Control>("State");
         buttons = GetNode<HBoxContainer>("Buttons");
 
         foreach (Node state in States)
