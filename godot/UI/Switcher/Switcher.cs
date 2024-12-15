@@ -6,7 +6,7 @@ namespace GratitudeApp.UI.Switcher;
 public partial class Switcher : VBoxContainer
 {
     [Export]
-    private Array<Control> States;
+    private Array<PackedScene> scenes;
 
     private Control stateNode;
     private HBoxContainer buttons;
@@ -16,8 +16,9 @@ public partial class Switcher : VBoxContainer
         stateNode = GetNode<Control>("State");
         buttons = GetNode<HBoxContainer>("Buttons");
 
-        foreach (Control state in States)
+        foreach (PackedScene scene in scenes)
         {
+            Control state = scene.Instantiate<Control>();
             var button = new StateButton { Text = state.Name, State = state };
             button.StatePressed += (Control node) => stateNode = node;
             buttons.AddChild(button);
