@@ -10,8 +10,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Feed" parent="." instance=ExtResource("1_a3dkh")]
+[node name="Feed" parent="." node_paths=PackedStringArray("inputLine", "clearButton") instance=ExtResource("1_a3dkh")]
 layout_mode = 2
+inputLine = NodePath("../Input")
+clearButton = NodePath("../ClearNotes")
 
 [node name="Input" parent="." instance=ExtResource("2_sbxl5")]
 layout_mode = 2
