@@ -5,10 +5,11 @@ namespace GratitudeApp.UI.Switcher;
 
 public partial class StateButton : Button
 {
-    public event Action<Node> StatePressed;
+    public event Action<Control> StatePressed;
+    public Control State { get; set; }
 
     public override void _Ready()
     {
-        Pressed += () => StatePressed?.Invoke(new Node());
+        Pressed += () => StatePressed?.Invoke(State);
     }
 }
