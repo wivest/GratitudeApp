@@ -20,7 +20,7 @@ public partial class Switcher : VBoxContainer
         {
             Control state = scene.Instantiate<Control>();
             var button = new StateButton { Text = state.Name, State = state };
-            button.StatePressed += (Control node) => stateNode = node;
+            button.StatePressed += (Control control) => stateNode.ReplaceBy(control);
             buttons.AddChild(button);
         }
     }
