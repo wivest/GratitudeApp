@@ -18,7 +18,7 @@ public partial class Switcher : VBoxContainer
 
         foreach (Node state in States)
         {
-            var button = new Button { Text = state.Name };
+            var button = new StateButton { Text = state.Name };
             buttons.AddChild(button);
         }
     }
