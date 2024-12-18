@@ -18,8 +18,8 @@ public partial class Switcher : VBoxContainer
 
         foreach (PackedScene scene in scenes)
         {
-            Control state = scene.Instantiate<Control>();
-            var button = new StateButton { Text = state.Name, State = state };
+            Control node = scene.Instantiate<Control>();
+            var button = new StateButton { Text = node.Name, State = scene };
             button.StatePressed += (Control control) => stateNode.ReplaceBy(control);
             buttons.AddChild(button);
         }
