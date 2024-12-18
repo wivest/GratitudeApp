@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://btxvjdftd2sog"]
+
+[ext_resource type="Script" path="res://UI/Switcher/Switcher.cs" id="1_hoscv"]
+[ext_resource type="PackedScene" uid="uid://bklg1r6tbiolb" path="res://UI/Notes/notes.tscn" id="2_0cdhh"]
+
+[node name="Switcher" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+script = ExtResource("1_hoscv")
+scenes = Array[PackedScene]([ExtResource("2_0cdhh")])
+
+[node name="State" type="Control" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+layout_mode = 2

@@ -10,6 +10,13 @@ public partial class StateButton : Button
 
     public override void _Ready()
     {
-        Pressed += () => StatePressed?.Invoke(State.Instantiate<Control>());
+        Pressed += OnPressed;
+    }
+
+    private void OnPressed()
+    {
+        Control node = State.Instantiate<Control>();
+        node.SizeFlagsVertical = SizeFlags.ExpandFill;
+        StatePressed?.Invoke(node);
     }
 }

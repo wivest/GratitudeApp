@@ -1,24 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://br8ftvctldqfs"]
+[gd_scene load_steps=2 format=3 uid="uid://br8ftvctldqfs"]
 
-[ext_resource type="PackedScene" uid="uid://bklg1r6tbiolb" path="res://UI/Notes/notes.tscn" id="1_2r173"]
-[ext_resource type="Script" path="res://UI/Switcher/Switcher.cs" id="2_spe5e"]
+[ext_resource type="PackedScene" uid="uid://btxvjdftd2sog" path="res://UI/Switcher/switcher.tscn" id="2_nwyfu"]
 
 [node name="Main" type="Node"]
 
-[node name="Notes" parent="." instance=ExtResource("1_2r173")]
-
-[node name="States" type="VBoxContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("2_spe5e")
-scenes = Array[PackedScene]([ExtResource("1_2r173")])
-
-[node name="State" type="Control" parent="States"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Buttons" type="HBoxContainer" parent="States"]
-layout_mode = 2
+[node name="Switcher" parent="." instance=ExtResource("2_nwyfu")]
