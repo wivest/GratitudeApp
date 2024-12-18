@@ -25,8 +25,16 @@ public partial class Switcher : VBoxContainer
                 State = scene,
                 SizeFlagsHorizontal = SizeFlags.ExpandFill
             };
-            button.StatePressed += (Control control) => stateNode.ReplaceBy(control);
+            button.StateChanged += OnStateChanged;
             buttons.AddChild(button);
         }
+    }
+
+    private void OnStateChanged(Control state)
+    {
+        foreach (Node child in stateNode.GetChildren())
+            child.QueueFree();
+        stateNode.ReplaceBy(state);
+        stateNode = state;
     }
 }
