@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckdg58nrkk7aj"]
+
+[ext_resource type="PackedScene" uid="uid://crnlywuc834gp" path="res://UI/People/Feed/feed.tscn" id="1_2hlia"]
+[ext_resource type="PackedScene" uid="uid://r8m8u1o5v638" path="res://UI/People/InputLine/input_line.tscn" id="2_u42ac"]
+
+[node name="People" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Feed" parent="." instance=ExtResource("1_2hlia")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Person" parent="." instance=ExtResource("2_u42ac")]
+layout_mode = 2

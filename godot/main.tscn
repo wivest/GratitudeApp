@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://br8ftvctldqfs"]
+[gd_scene load_steps=4 format=3 uid="uid://br8ftvctldqfs"]
 
+[ext_resource type="PackedScene" uid="uid://bklg1r6tbiolb" path="res://UI/Notes/notes.tscn" id="1_2r173"]
 [ext_resource type="PackedScene" uid="uid://btxvjdftd2sog" path="res://UI/Switcher/switcher.tscn" id="2_nwyfu"]
+[ext_resource type="PackedScene" uid="uid://ckdg58nrkk7aj" path="res://UI/People/people.tscn" id="3_6v3jl"]
 
 [node name="Main" type="Node"]
 
 [node name="Switcher" parent="." instance=ExtResource("2_nwyfu")]
+scenes = Array[PackedScene]([ExtResource("1_2r173"), ExtResource("3_6v3jl")])
