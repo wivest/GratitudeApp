@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://UI/People/InputLine/InputLine.cs" id="1_3jcs8"]
 
-[node name="Person" type="HBoxContainer"]
+[node name="InputLine" type="HBoxContainer"]
 script = ExtResource("1_3jcs8")
 
 [node name="Name" type="LineEdit" parent="."]

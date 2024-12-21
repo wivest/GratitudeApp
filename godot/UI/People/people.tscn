@@ -10,9 +10,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Feed" parent="." instance=ExtResource("1_2hlia")]
+[node name="Feed" parent="." node_paths=PackedStringArray("inputLine") instance=ExtResource("1_2hlia")]
 layout_mode = 2
 size_flags_vertical = 3
+inputLine = NodePath("../InputLine")
 
-[node name="Person" parent="." instance=ExtResource("2_u42ac")]
+[node name="InputLine" parent="." instance=ExtResource("2_u42ac")]
 layout_mode = 2
