@@ -16,7 +16,7 @@ public class Saver<T>
     {
         if (!ResourceLoader.Exists(savePath))
             return new T();
-        return ResourceLoader.Load<T>(savePath);
+        return ResourceLoader.Load<T>(savePath, cacheMode: ResourceLoader.CacheMode.Ignore);
     }
 
     public void Save(T resource)
