@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Godot;
 using GratitudeApp.Model;
@@ -6,7 +7,7 @@ namespace GratitudeApp.UI.People;
 
 public partial class InputLine : HBoxContainer
 {
-    public static List<PersonData> People { get; set; } = new();
+    public event Action<PersonData> PersonSaved;
 
     private LineEdit nameLineEdit;
     private LineEdit tagLineEdit;
@@ -25,8 +26,8 @@ public partial class InputLine : HBoxContainer
     {
         string name = nameLineEdit.Text;
         string tag = tagLineEdit.Text;
-        People.Add(new PersonData { Name = name, Tag = tag });
         nameLineEdit.Text = "";
         tagLineEdit.Text = "";
+        PersonSaved?.Invoke(new PersonData { Name = name, Tag = tag });
     }
 }

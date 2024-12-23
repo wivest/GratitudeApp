@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using Godot;
+using Godot.Collections;
 using GratitudeApp.Model;
 using GratitudeApp.Model.Save;
 
@@ -17,6 +19,8 @@ public partial class Feed : ScrollContainer
     {
         container = GetNode<VBoxContainer>("Container");
         LoadPeople();
+
+        inputLine.PersonSaved += OnPersonSaved;
     }
 
     private void LoadPeople()
@@ -25,4 +29,15 @@ public partial class Feed : ScrollContainer
         foreach (PersonData person in people.People)
             container.AddChild(new PersonHint(person));
     }
+
+    private void SavePeople()
+    {
+        var people = new List<PersonData>();
+
+        // TODO: collect people
+
+        saver.Save(new PeopleSave { People = new Array<PersonData>(people) });
+    }
+
+    private void OnPersonSaved(PersonData person) { }
 }
