@@ -27,17 +27,25 @@ public partial class Feed : ScrollContainer
     {
         PeopleSave people = saver.Load();
         foreach (PersonData person in people.People)
-            container.AddChild(new PersonHint(person));
+            container.AddChild(new Person(person));
     }
 
     private void SavePeople()
     {
         var people = new List<PersonData>();
 
-        // TODO: collect people
+        foreach (Node child in container.GetChildren())
+        {
+            var person = (Person)child;
+            people.Add(person.PersonResource);
+        }
 
         saver.Save(new PeopleSave { People = new Array<PersonData>(people) });
     }
 
-    private void OnPersonSaved(PersonData person) { }
+    private void OnPersonSaved(PersonData person)
+    {
+        container.AddChild(new Person(person));
+        SavePeople();
+    }
 }

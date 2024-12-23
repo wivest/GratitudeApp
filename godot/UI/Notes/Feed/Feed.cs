@@ -39,7 +39,7 @@ public partial class Feed : ScrollContainer
         var notes = new List<NoteData>();
         foreach (Node child in container.GetChildren())
         {
-            Note note = (Note)child;
+            var note = (Note)child;
             notes.Add(note.NoteResource);
         }
 
