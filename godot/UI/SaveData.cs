@@ -11,6 +11,6 @@ namespace GratitudeApp
         public Array<NoteData> Messages = new();
 
         [Export]
-        public Array<Person> People = new();
+        public Array<PersonData> People = new();
     }
 }

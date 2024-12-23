@@ -34,7 +34,7 @@ namespace GratitudeApp
 
             SaveData saveData = ResourceLoader.Load<SaveData>(SAVE_PATH);
             messages = new List<NoteData>(saveData.Messages);
-            UI.People.InputLine.People = new List<Person>(saveData.People);
+            UI.People.InputLine.People = new List<PersonData>(saveData.People);
 
             foreach (NoteData message in messages)
             {
@@ -47,7 +47,7 @@ namespace GratitudeApp
             var saveData = new SaveData
             {
                 Messages = new Array<NoteData>(messages),
-                People = new Array<Person>(UI.People.InputLine.People)
+                People = new Array<PersonData>(UI.People.InputLine.People)
             };
             ResourceSaver.Save(saveData, SAVE_PATH);
         }
@@ -65,11 +65,11 @@ namespace GratitudeApp
             CreateRecord(message);
         }
 
-        private void OnPeopleMatched(List<Person> matched)
+        private void OnPeopleMatched(List<PersonData> matched)
         {
             foreach (Node child in peopleHints.GetChildren())
                 child.QueueFree();
-            foreach (Person person in matched)
+            foreach (PersonData person in matched)
             {
                 var personHint = new PersonHint(person) { Text = $"{person.Name} (@{person.Tag})" };
                 peopleHints.AddChild(personHint);

@@ -3,8 +3,8 @@ using Godot.Collections;
 
 namespace GratitudeApp.Model.Save;
 
-public partial class PersonSave : Resource
+public partial class PeopleSave : Resource
 {
     [Export]
-    public Array<Person> People = new();
+    public Array<PersonData> People = new();
 }

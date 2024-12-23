@@ -5,9 +5,9 @@ namespace GratitudeApp;
 
 public partial class PersonHint : Button
 {
-    public readonly Person PersonResource;
+    public readonly PersonData PersonResource;
 
-    public PersonHint(Person person)
+    public PersonHint(PersonData person)
     {
         PersonResource = person;
     }

@@ -6,7 +6,7 @@ namespace GratitudeApp.UI.People;
 
 public partial class InputLine : HBoxContainer
 {
-    public static List<Person> People { get; set; } = new();
+    public static List<PersonData> People { get; set; } = new();
 
     private LineEdit nameLineEdit;
     private LineEdit tagLineEdit;
@@ -25,7 +25,7 @@ public partial class InputLine : HBoxContainer
     {
         string name = nameLineEdit.Text;
         string tag = tagLineEdit.Text;
-        People.Add(new Person { Name = name, Tag = tag });
+        People.Add(new PersonData { Name = name, Tag = tag });
         nameLineEdit.Text = "";
         tagLineEdit.Text = "";
     }

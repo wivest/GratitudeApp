@@ -9,7 +9,7 @@ public partial class NoteData : Resource
     public string Text { get; set; }
 
     [Export]
-    public Array<Person> Tagged { get; set; }
+    public Array<PersonData> Tagged { get; set; }
 
     [Export]
     public long UnixTime { get; set; }

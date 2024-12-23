@@ -2,7 +2,7 @@ using Godot;
 
 namespace GratitudeApp.Model;
 
-public partial class Person : Resource
+public partial class PersonData : Resource
 {
     [Export]
     public string Name;

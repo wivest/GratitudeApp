@@ -11,7 +11,7 @@ public partial class Feed : ScrollContainer
 
     private VBoxContainer container;
 
-    private readonly Saver<PersonSave> saver = new("user://people.tres");
+    private readonly Saver<PeopleSave> saver = new("user://people.tres");
 
     public override void _Ready()
     {
@@ -21,8 +21,8 @@ public partial class Feed : ScrollContainer
 
     private void LoadPeople()
     {
-        PersonSave people = saver.Load();
-        foreach (Person person in people.People)
+        PeopleSave people = saver.Load();
+        foreach (PersonData person in people.People)
             container.AddChild(new PersonHint(person));
     }
 }
