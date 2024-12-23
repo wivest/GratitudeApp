@@ -2,11 +2,17 @@ using Godot;
 
 namespace GratitudeApp.Model;
 
-public partial class PersonData : Resource
+public partial class Person : VBoxContainer
 {
-    [Export]
-    public string Name;
+    private Label name;
+    private Label tag;
 
-    [Export]
-    public string Tag;
+    public Person(PersonData person)
+    {
+        name = new Label { Text = person.Name };
+        tag = new Label { Text = person.Tag };
+
+        AddChild(name);
+        AddChild(tag);
+    }
 }
