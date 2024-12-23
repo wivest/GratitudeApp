@@ -16,7 +16,7 @@ public partial class Feed : ScrollContainer
 
     private VBoxContainer container;
 
-    private readonly Saver<NoteSave> saver = new("user://notes.tres");
+    private readonly Saver<NotesSave> saver = new("user://notes.tres");
 
     public override void _Ready()
     {
@@ -29,7 +29,7 @@ public partial class Feed : ScrollContainer
 
     private void LoadNotes()
     {
-        NoteSave notes = saver.Load();
+        NotesSave notes = saver.Load();
         foreach (NoteData noteData in notes.Notes)
             container.AddChild(new Note(noteData));
     }
@@ -43,7 +43,7 @@ public partial class Feed : ScrollContainer
             notes.Add(note.NoteResource);
         }
 
-        saver.Save(new NoteSave { Notes = new Array<NoteData>(notes) });
+        saver.Save(new NotesSave { Notes = new Array<NoteData>(notes) });
     }
 
     private void ClearNotes()
