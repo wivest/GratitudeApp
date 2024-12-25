@@ -22,7 +22,7 @@ public partial class Switcher : VBoxContainer
             var button = new StateButton
             {
                 Text = node.Name,
-                State = scene.Scene,
+                State = scene,
                 SizeFlagsHorizontal = SizeFlags.ExpandFill
             };
             button.StateChanged += OnStateChanged;
