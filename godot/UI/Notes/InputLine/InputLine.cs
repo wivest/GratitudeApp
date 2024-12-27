@@ -34,6 +34,11 @@ public partial class InputLine : Control
         // TODO: suggest matchings
         PeopleSave save = saver.Load();
         var people = new List<PersonData>(save.People);
+        foreach (PersonData person in people)
+        {
+            if (person.Tag.StartsWith(tag))
+                ; // add match
+        }
     }
 
     private void OnMessageSaved()
