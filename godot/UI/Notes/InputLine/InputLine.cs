@@ -9,6 +9,7 @@ namespace GratitudeApp.UI.Notes;
 public partial class InputLine : Control
 {
     public event Action<string> MessageSaved;
+    public event Action<PersonData> PersonMatched;
 
     private LineEdit lineEdit;
     private Button saveButton;
@@ -37,7 +38,7 @@ public partial class InputLine : Control
         foreach (PersonData person in people)
         {
             if (person.Tag.StartsWith(tag))
-                ; // add match
+                PersonMatched?.Invoke(person);
         }
     }
 
