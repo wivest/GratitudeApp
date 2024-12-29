@@ -32,7 +32,6 @@ public partial class InputLine : Control
             return;
         string tag = lastWord.Split('@')[^1];
 
-        // TODO: suggest matchings
         PeopleSave save = saver.Load();
         var people = new List<PersonData>(save.People);
         foreach (PersonData person in people)
