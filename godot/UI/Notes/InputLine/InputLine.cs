@@ -6,7 +6,7 @@ using GratitudeApp.Model.Save;
 
 namespace GratitudeApp.UI.Notes;
 
-public partial class InputLine : Control
+public partial class InputLine : HBoxContainer
 {
     public event Action<string> MessageSaved;
     public event Action<PersonData> PersonMatched;
