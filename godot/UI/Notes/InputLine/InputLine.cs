@@ -10,6 +10,7 @@ public partial class InputLine : Control
 {
     public event Action<string> MessageSaved;
     public event Action<PersonData> PersonMatched;
+    public event Action InputUpdated;
 
     private LineEdit lineEdit;
     private Button saveButton;
@@ -22,6 +23,7 @@ public partial class InputLine : Control
         saveButton = GetNode<Button>("Button");
 
         saveButton.Pressed += OnMessageSaved;
+        lineEdit.TextChanged += (string t) => InputUpdated?.Invoke();
         lineEdit.TextChanged += OnTextChanged;
     }
 

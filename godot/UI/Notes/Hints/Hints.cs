@@ -13,6 +13,11 @@ public partial class Hints : VBoxContainer
 
     public override void _Ready()
     {
+        inputLine.InputUpdated += () =>
+        {
+            foreach (var child in GetChildren())
+                child.QueueFree();
+        };
         inputLine.PersonMatched += OnPersonMatched;
     }
 
