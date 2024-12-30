@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bklg1r6tbiolb"]
+[gd_scene load_steps=5 format=3 uid="uid://bklg1r6tbiolb"]
 
 [ext_resource type="PackedScene" uid="uid://bawtto8dd00um" path="res://UI/Notes/Feed/feed.tscn" id="1_a3dkh"]
 [ext_resource type="PackedScene" uid="uid://bj6yuxkxiyjyf" path="res://UI/Notes/InputLine/input_line.tscn" id="2_sbxl5"]
+[ext_resource type="PackedScene" uid="uid://d3ak3maiib8p4" path="res://UI/Notes/Hints/hints.tscn" id="2_vu7s5"]
+[ext_resource type="Script" path="res://UI/Notes/Hints/Hints.cs" id="3_r7l0q"]
 
 [node name="Notes" type="VBoxContainer"]
 anchors_preset = 15
@@ -14,6 +16,10 @@ grow_vertical = 2
 layout_mode = 2
 inputLine = NodePath("../Input")
 clearButton = NodePath("../ClearNotes")
+
+[node name="Hints" parent="." instance=ExtResource("2_vu7s5")]
+layout_mode = 2
+script = ExtResource("3_r7l0q")
 
 [node name="Input" parent="." instance=ExtResource("2_sbxl5")]
 layout_mode = 2
