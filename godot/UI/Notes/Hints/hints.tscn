@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://d3ak3maiib8p4"]
+[gd_scene load_steps=2 format=3 uid="uid://d3ak3maiib8p4"]
+
+[ext_resource type="Script" path="res://UI/Notes/Hints/Hints.cs" id="1_5wtar"]
 
 [node name="Hints" type="VBoxContainer"]
+script = ExtResource("1_5wtar")
