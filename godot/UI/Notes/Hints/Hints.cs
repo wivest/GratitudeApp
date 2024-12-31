@@ -6,7 +6,7 @@ namespace GratitudeApp.UI.Notes;
 
 public partial class Hints : VBoxContainer
 {
-    public event Action<Person> PersonChosen;
+    public event Action<PersonData> PersonChosen;
 
     [Export]
     private InputLine inputLine;

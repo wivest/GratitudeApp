@@ -15,6 +15,9 @@ public partial class InputLine : HBoxContainer
     private LineEdit lineEdit;
     private Button saveButton;
 
+    [Export]
+    private Hints hints;
+
     private readonly Saver<PeopleSave> saver = new("user://people.tres");
 
     public override void _Ready()
@@ -25,6 +28,16 @@ public partial class InputLine : HBoxContainer
         saveButton.Pressed += OnMessageSaved;
         lineEdit.TextChanged += (string t) => InputUpdated?.Invoke();
         lineEdit.TextChanged += OnTextChanged;
+        hints.PersonChosen += OnPersonChosen;
+    }
+
+    private void OnMessageSaved()
+    {
+        string message = lineEdit.Text;
+        lineEdit.Text = "";
+
+        if (message != "")
+            MessageSaved?.Invoke(message);
     }
 
     private void OnTextChanged(string text)
@@ -43,12 +56,5 @@ public partial class InputLine : HBoxContainer
         }
     }
 
-    private void OnMessageSaved()
-    {
-        string message = lineEdit.Text;
-        lineEdit.Text = "";
-
-        if (message != "")
-            MessageSaved?.Invoke(message);
-    }
+    private void OnPersonChosen(PersonData person) { }
 }
