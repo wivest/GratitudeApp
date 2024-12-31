@@ -23,7 +23,7 @@ public partial class Hints : VBoxContainer
 
     private void OnPersonMatched(PersonData person)
     {
-        var hint = new Button { Text = $"{person.Name} ({person.Tag})" };
+        var hint = new HintButton { Text = $"{person.Name} ({person.Tag})", Person = person };
         AddChild(hint);
     }
 }
