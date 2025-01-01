@@ -20,8 +20,9 @@ clearButton = NodePath("../ClearNotes")
 layout_mode = 2
 inputLine = NodePath("../Input")
 
-[node name="Input" parent="." instance=ExtResource("2_sbxl5")]
+[node name="Input" parent="." node_paths=PackedStringArray("hints") instance=ExtResource("2_sbxl5")]
 layout_mode = 2
+hints = NodePath("../Hints")
 
 [node name="ClearNotes" type="Button" parent="."]
 layout_mode = 2

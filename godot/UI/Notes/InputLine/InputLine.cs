@@ -56,5 +56,8 @@ public partial class InputLine : HBoxContainer
         }
     }
 
-    private void OnPersonChosen(PersonData person) { }
+    private void OnPersonChosen(PersonData person)
+    {
+        GD.Print(person.Tag);
+    }
 }

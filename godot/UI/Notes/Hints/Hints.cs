@@ -24,6 +24,7 @@ public partial class Hints : VBoxContainer
     private void OnPersonMatched(PersonData person)
     {
         var hint = new HintButton { Text = $"{person.Name} ({person.Tag})", Person = person };
+        hint.Pressed += () => PersonChosen?.Invoke(hint.Person);
         AddChild(hint);
     }
 }
