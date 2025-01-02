@@ -26,7 +26,6 @@ public partial class InputLine : HBoxContainer
         saveButton = GetNode<Button>("Button");
 
         saveButton.Pressed += OnMessageSaved;
-        lineEdit.TextChanged += (string t) => InputUpdated?.Invoke();
         lineEdit.TextChanged += OnTextChanged;
         hints.PersonChosen += OnPersonChosen;
     }
@@ -42,6 +41,8 @@ public partial class InputLine : HBoxContainer
 
     private void OnTextChanged(string text)
     {
+        InputUpdated?.Invoke();
+
         string lastWord = text.Split(' ')[^1];
         if (!lastWord.StartsWith('@'))
             return;
