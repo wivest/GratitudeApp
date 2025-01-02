@@ -58,6 +58,8 @@ public partial class InputLine : HBoxContainer
 
     private void OnPersonChosen(PersonData person)
     {
-        GD.Print(person.Tag);
+        string text = lineEdit.Text;
+        text = text[..(text.LastIndexOf('@') + 1)] + $"{person.Tag} ";
+        lineEdit.Text = text;
     }
 }
