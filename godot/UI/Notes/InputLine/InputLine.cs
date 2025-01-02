@@ -62,5 +62,6 @@ public partial class InputLine : HBoxContainer
         string text = lineEdit.Text;
         text = text[..(text.LastIndexOf('@') + 1)] + $"{person.Tag} ";
         lineEdit.Text = text;
+        OnTextChanged(text);
     }
 }
