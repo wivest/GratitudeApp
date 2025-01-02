@@ -32,7 +32,7 @@ public partial class InputLine : HBoxContainer
 
     private void OnMessageSaved()
     {
-        string message = lineEdit.Text;
+        string message = lineEdit.Text.Trim();
         lineEdit.Text = "";
 
         if (message != "")
