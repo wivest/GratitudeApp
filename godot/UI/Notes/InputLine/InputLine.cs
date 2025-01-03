@@ -26,6 +26,7 @@ public partial class InputLine : HBoxContainer
         saveButton = GetNode<Button>("Button");
 
         saveButton.Pressed += OnMessageSaved;
+        lineEdit.TextSubmitted += (string t) => OnMessageSaved();
         lineEdit.TextChanged += OnTextChanged;
         hints.PersonChosen += OnPersonChosen;
     }
