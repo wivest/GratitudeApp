@@ -20,6 +20,13 @@ public partial class InputLine : HBoxContainer
         saveButton = GetNode<Button>("Save");
 
         saveButton.Pressed += OnPersonSaved;
+        tagLineEdit.TextChanged += OnTagEdited;
+    }
+
+    private void OnTagEdited(string tag)
+    {
+        if (tag.Contains(' '))
+            GD.Print("Invalid character (' ') used!");
     }
 
     private void OnPersonSaved()
