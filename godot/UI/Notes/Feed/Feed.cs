@@ -25,6 +25,7 @@ public partial class Feed : ScrollContainer
 
         inputLine.MessageSaved += OnNoteSaved;
         clearButton.Pressed += ClearNotes;
+        GetVScrollBar().Changed += () => ScrollVertical = (int)GetVScrollBar().MaxValue;
     }
 
     private void LoadNotes()
