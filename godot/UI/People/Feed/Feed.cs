@@ -21,6 +21,7 @@ public partial class Feed : ScrollContainer
         LoadPeople();
 
         inputLine.PersonSaved += OnPersonSaved;
+        GetVScrollBar().Changed += () => ScrollVertical = (int)GetVScrollBar().MaxValue;
     }
 
     private void LoadPeople()
