@@ -15,5 +15,9 @@ layout_mode = 2
 size_flags_vertical = 3
 inputLine = NodePath("../InputLine")
 
-[node name="InputLine" parent="." instance=ExtResource("2_u42ac")]
+[node name="InputLine" parent="." node_paths=PackedStringArray("status") instance=ExtResource("2_u42ac")]
+layout_mode = 2
+status = NodePath("../Status")
+
+[node name="Status" type="Label" parent="."]
 layout_mode = 2

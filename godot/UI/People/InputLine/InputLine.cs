@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using Godot;
 using GratitudeApp.Model;
 
@@ -8,6 +7,9 @@ namespace GratitudeApp.UI.People;
 public partial class InputLine : HBoxContainer
 {
     public event Action<PersonData> PersonSaved;
+
+    [Export]
+    private Label status;
 
     private LineEdit nameLineEdit;
     private LineEdit tagLineEdit;
@@ -26,7 +28,9 @@ public partial class InputLine : HBoxContainer
     private void OnTagEdited(string tag)
     {
         if (tag.Contains(' '))
-            GD.Print("Invalid character (' ') used!");
+            status.Text = "Invalid character (' ') used!";
+        else
+            status.Text = "";
     }
 
     private void OnPersonSaved()
