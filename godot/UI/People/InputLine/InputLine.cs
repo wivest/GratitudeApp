@@ -41,6 +41,8 @@ public partial class InputLine : HBoxContainer
 
     private void OnPersonSaved()
     {
+        if (!status.Valid)
+            return;
         string name = nameLineEdit.Text;
         string tag = tagLineEdit.Text;
         nameLineEdit.Text = "";
