@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckdg58nrkk7aj"]
+[gd_scene load_steps=4 format=3 uid="uid://ckdg58nrkk7aj"]
 
 [ext_resource type="PackedScene" uid="uid://crnlywuc834gp" path="res://UI/People/Feed/feed.tscn" id="1_2hlia"]
 [ext_resource type="PackedScene" uid="uid://r8m8u1o5v638" path="res://UI/People/InputLine/input_line.tscn" id="2_u42ac"]
+[ext_resource type="Script" path="res://UI/People/InputLine/StatusLabel.cs" id="3_odaac"]
 
 [node name="People" type="VBoxContainer"]
 anchors_preset = 15
@@ -21,3 +22,4 @@ status = NodePath("../Status")
 
 [node name="Status" type="Label" parent="."]
 layout_mode = 2
+script = ExtResource("3_odaac")

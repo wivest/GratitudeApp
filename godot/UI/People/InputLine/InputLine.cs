@@ -9,7 +9,7 @@ public partial class InputLine : HBoxContainer
     public event Action<PersonData> PersonSaved;
 
     [Export]
-    private Label status;
+    private StatusLabel status;
 
     private LineEdit nameLineEdit;
     private LineEdit tagLineEdit;
@@ -28,9 +28,15 @@ public partial class InputLine : HBoxContainer
     private void OnTagEdited(string tag)
     {
         if (tag.Contains(' '))
+        {
+            status.Valid = false;
             status.Text = "Invalid character (' ') used!";
+        }
         else
+        {
+            status.Valid = true;
             status.Text = "";
+        }
     }
 
     private void OnPersonSaved()
