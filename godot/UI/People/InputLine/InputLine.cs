@@ -27,15 +27,21 @@ public partial class InputLine : HBoxContainer
 
     private void OnTagEdited(string tag)
     {
+        status.Valid = Validate(tag, out string message);
+        status.Text = message;
+    }
+
+    private static bool Validate(string tag, out string message)
+    {
         if (tag.Contains(' '))
         {
-            status.Valid = false;
-            status.Text = "Invalid character (' ') used!";
+            message = "Invalid character (' ') used!";
+            return false;
         }
         else
         {
-            status.Valid = true;
-            status.Text = "";
+            message = "";
+            return true;
         }
     }
 
