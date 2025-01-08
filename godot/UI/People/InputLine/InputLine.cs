@@ -33,16 +33,15 @@ public partial class InputLine : HBoxContainer
 
     private static bool Validate(string tag, out string message)
     {
-        if (tag.Contains(' '))
-        {
-            message = "Invalid character (' ') used!";
-            return false;
-        }
-        else
-        {
-            message = "";
-            return true;
-        }
+        foreach (char c in tag)
+            if ((c < 'a' || 'z' < c) && (c < '0' || '9' < c) && c != '_')
+            {
+                message = $"Invalid character ('{c}') used!";
+                return false;
+            }
+
+        message = "";
+        return true;
     }
 
     private void OnPersonSaved()
