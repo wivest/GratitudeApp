@@ -48,7 +48,9 @@ public partial class InputLine : HBoxContainer
     {
         if (!status.Valid)
             return;
-        string name = nameLineEdit.Text;
+        string name = nameLineEdit.Text.Trim();
+        if (name == "")
+            return;
         string tag = tagLineEdit.Text;
         nameLineEdit.Text = "";
         tagLineEdit.Text = "";
