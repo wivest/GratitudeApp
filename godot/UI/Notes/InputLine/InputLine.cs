@@ -44,7 +44,9 @@ public partial class InputLine : HBoxContainer
     {
         InputUpdated?.Invoke();
 
+        text = text.Substring(0, lineEdit.CaretColumn);
         string lastWord = text.Split(' ')[^1];
+
         if (!lastWord.StartsWith('@'))
             return;
         string tag = lastWord.Split('@')[^1];
