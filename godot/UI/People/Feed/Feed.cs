@@ -46,6 +46,9 @@ public partial class Feed : ScrollContainer
 
     private void OnPersonSaved(PersonData person)
     {
+        foreach (PersonData p in saver.Load().People)
+            if (p.Tag == person.Tag)
+                return;
         container.AddChild(new Person(person));
         SavePeople();
     }
