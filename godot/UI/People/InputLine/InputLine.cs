@@ -1,6 +1,7 @@
 using System;
 using Godot;
 using GratitudeApp.Model;
+using GratitudeApp.Model.Save;
 
 namespace GratitudeApp.UI.People;
 
@@ -14,6 +15,8 @@ public partial class InputLine : HBoxContainer
     private LineEdit nameLineEdit;
     private LineEdit tagLineEdit;
     private Button saveButton;
+
+    private readonly Saver<PeopleSave> saver = new("user://people.tres");
 
     public override void _Ready()
     {
@@ -31,8 +34,14 @@ public partial class InputLine : HBoxContainer
         status.Text = message;
     }
 
-    private static bool Validate(string tag, out string message)
+    private bool Validate(string tag, out string message)
     {
+        foreach (PersonData p in saver.Load().People)
+            if (p.Tag == tag)
+            {
+                message = "This tag already exists!";
+                return false;
+            }
         foreach (char c in tag)
             if ((c < 'a' || 'z' < c) && (c < '0' || '9' < c) && c != '_')
             {
