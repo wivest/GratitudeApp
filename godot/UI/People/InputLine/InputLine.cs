@@ -36,6 +36,12 @@ public partial class InputLine : HBoxContainer
 
     private bool Validate(string tag, out string message)
     {
+        string name = nameLineEdit.Text.Trim();
+        if (name == "")
+        {
+            message = "Name cannot be empty!";
+            return false;
+        }
         foreach (PersonData p in saver.Load().People)
             if (p.Tag == tag)
             {
@@ -58,8 +64,6 @@ public partial class InputLine : HBoxContainer
         if (!status.Valid)
             return;
         string name = nameLineEdit.Text.Trim();
-        if (name == "")
-            return;
         string tag = tagLineEdit.Text;
         nameLineEdit.Text = "";
         tagLineEdit.Text = "";
