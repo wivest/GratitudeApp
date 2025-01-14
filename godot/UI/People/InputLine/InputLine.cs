@@ -26,6 +26,8 @@ public partial class InputLine : HBoxContainer
 
         saveButton.Pressed += OnPersonSaved;
         tagLineEdit.TextChanged += OnTagEdited;
+
+        OnTagEdited(tagLineEdit.Text);
     }
 
     private void OnTagEdited(string tag)
