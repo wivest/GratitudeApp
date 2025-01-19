@@ -8,7 +8,7 @@ script = ExtResource("1_tmddn")
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "Message"
+placeholder_text = "Note"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
